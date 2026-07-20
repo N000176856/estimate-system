@@ -2044,6 +2044,10 @@ function resetData() {
   // === 6. 重置工繳工時 ===
   initLaborTable();
 
+  // === 6-1. 重置外包費用 ===
+  var outsourceInput = document.getElementById('outsource-cost');
+  if (outsourceInput) outsourceInput.value = 0;
+
   // === 7. 重置產品資訊 ===
   const prodType = document.getElementById('prod-type');
   if (prodType) prodType.selectedIndex = 0;
