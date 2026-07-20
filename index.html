@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
 <title>FHI齒輪廠估算資料表</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <style>
@@ -223,53 +223,57 @@ body { font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; background: va
     padding: 5px 8px !important;
   }
 }
+
+.wh-radio { display:inline-flex; align-items:center; gap:4px; cursor:pointer; padding:3px 8px; border-radius:4px; font-size:0.85em; transition:background 0.2s; }
+.wh-radio:hover { background:#dbeafe; }
+.wh-radio input:checked + * { font-weight:700; }
 </style>
 </head>
 <body>
 <!-- Header -->
 <div class="header">
 <div class="header-inner">
-<h1><svg class="header-gear-logo" width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="gearGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#93c5fd;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="gearGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#bfdbfe;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#93c5fd;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <!-- 大齒輪（左下） -->
-  <g transform="translate(38,62)">
-    <path d="M0,-28 L3,-28 L4,-24 C6,-23.5 8,-22.5 10,-21 L13.5,-23 L15.5,-23 L18,-18 L17,-17 L14,-15.5 C15,-13.5 15.5,-11 16,-9 L20,-8 L20,-5.5 L20,0 L20,5.5 L20,8 L16,9 C15.5,11 15,13.5 14,15.5 L17,17 L18,18 L15.5,23 L13.5,23 L10,21 C8,22.5 6,23.5 4,24 L3,28 L0,28 L-3,28 L-4,24 C-6,23.5 -8,22.5 -10,21 L-13.5,23 L-15.5,23 L-18,18 L-17,17 L-14,15.5 C-15,13.5 -15.5,11 -16,9 L-20,8 L-20,5.5 L-20,0 L-20,-5.5 L-20,-8 L-16,-9 C-15.5,-11 -15,-13.5 -14,-15.5 L-17,-17 L-18,-18 L-15.5,-23 L-13.5,-23 L-10,-21 C-8,-22.5 -6,-23.5 -4,-24 L-3,-28 Z" fill="url(#gearGrad1)" opacity="0.95">
-      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="25s" repeatCount="indefinite"/>
-    </path>
-    <circle cx="0" cy="0" r="10" fill="#0f2847"/>
-    <circle cx="0" cy="0" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
-  </g>
-  <!-- 中齒輪（右上） -->
-  <g transform="translate(65,32)">
-    <path d="M0,-18 L2,-18 L3,-15.5 C4.5,-15 5.5,-14 7,-13 L9,-14.5 L10,-14.5 L12,-11 L11,-10.5 L9,-9.5 C9.8,-8 10,-7 10.2,-5.5 L13,-5 L13,-3.5 L13,0 L13,3.5 L13,5 L10.2,5.5 C10,7 9.8,8 9,9.5 L11,10.5 L12,11 L10,14.5 L9,14.5 L7,13 C5.5,14 4.5,15 3,15.5 L2,18 L0,18 L-2,18 L-3,15.5 C-4.5,15 -5.5,14 -7,13 L-9,14.5 L-10,14.5 L-12,11 L-11,10.5 L-9,9.5 C-9.8,8 -10,7 -10.2,5.5 L-13,5 L-13,3.5 L-13,0 L-13,-3.5 L-13,-5 L-10.2,-5.5 C-10,-7 -9.8,-8 -9,-9.5 L-11,-10.5 L-12,-11 L-10,-14.5 L-9,-14.5 L-7,-13 C-5.5,-14 -4.5,-15 -3,-15.5 L-2,-18 Z" fill="url(#gearGrad2)" opacity="0.9">
-      <animateTransform attributeName="transform" type="rotate" values="360;0" dur="18s" repeatCount="indefinite"/>
-    </path>
-    <circle cx="0" cy="0" r="6.5" fill="#0f2847"/>
-    <circle cx="0" cy="0" r="4" fill="none" stroke="#93c5fd" stroke-width="1" opacity="0.5"/>
-  </g>
-  <!-- 小齒輪（右下） -->
-  <g transform="translate(75,58)">
-    <path d="M0,-12 L1.5,-12 L2,-10.5 C3,-10 4,-9.5 5,-8.5 L6.5,-9.5 L7,-9.5 L8.5,-7 L7.5,-6.5 L6,-6 C6.5,-5 6.8,-4.5 7,-3.5 L9,-3 L9,-2 L9,0 L9,2 L9,3 L7,3.5 C6.8,4.5 6.5,5 6,6 L7.5,6.5 L8.5,7 L7,9.5 L6.5,9.5 L5,8.5 C4,9.5 3,10 2,10.5 L1.5,12 L0,12 L-1.5,12 L-2,10.5 C-3,10 -4,9.5 -5,8.5 L-6.5,9.5 L-7,9.5 L-8.5,7 L-7.5,6.5 L-6,6 C-6.5,5 -6.8,4.5 -7,3.5 L-9,3 L-9,2 L-9,0 L-9,-2 L-9,-3 L-7,-3.5 C-6.8,-4.5 -6.5,-5 -6,-6 L-7.5,-6.5 L-8.5,-7 L-7,-9.5 L-6.5,-9.5 L-5,-8.5 C-4,-9.5 -3,-10 -2,-10.5 L-1.5,-12 Z" fill="url(#gearGrad2)" opacity="0.85">
-      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="12s" repeatCount="indefinite"/>
-    </path>
-    <circle cx="0" cy="0" r="4.5" fill="#0f2847"/>
-  </g>
-  <!-- 小齒輪（左上） -->
-  <g transform="translate(22,28)">
-    <path d="M0,-10 L1.2,-10 L1.6,-8.5 C2.5,-8 3.2,-7.5 4,-6.8 L5.2,-7.8 L5.8,-7.8 L7,-5.5 L6.2,-5 L5,-4.8 C5.3,-4 5.5,-3.5 5.6,-2.8 L7.2,-2.5 L7.2,-1.5 L7.2,0 L7.2,1.5 L7.2,2.5 L5.6,2.8 C5.5,3.5 5.3,4 5,4.8 L6.2,5 L7,5.5 L5.8,7.8 L5.2,7.8 L4,6.8 C3.2,7.5 2.5,8 1.6,8.5 L1.2,10 L0,10 L-1.2,10 L-1.6,8.5 C-2.5,8 -3.2,7.5 -4,6.8 L-5.2,7.8 L-5.8,7.8 L-7,5.5 L-6.2,5 L-5,4.8 C-5.3,4 -5.5,3.5 -5.6,2.8 L-7.2,2.5 L-7.2,1.5 L-7.2,0 L-7.2,-1.5 L-7.2,-2.5 L-5.6,-2.8 C-5.5,-3.5 -5.3,-4 -5,-4.8 L-6.2,-5 L-7,-5.5 L-5.8,-7.8 L-5.2,-7.8 L-4,-6.8 C-3.2,-7.5 -2.5,-8 -1.6,-8.5 L-1.2,-10 Z" fill="url(#gearGrad1)" opacity="0.8">
-      <animateTransform attributeName="transform" type="rotate" values="360;0" dur="10s" repeatCount="indefinite"/>
-    </path>
-    <circle cx="0" cy="0" r="3.5" fill="#0f2847"/>
-  </g>
+<h1><svg class="header-gear-logo" height="44" viewbox="0 0 100 100" width="44" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="gearGrad1" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#93c5fd;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1"></stop>
+</lineargradient>
+<lineargradient id="gearGrad2" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#bfdbfe;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#93c5fd;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+<!-- 大齒輪（左下） -->
+<g transform="translate(38,62)">
+<path d="M0,-28 L3,-28 L4,-24 C6,-23.5 8,-22.5 10,-21 L13.5,-23 L15.5,-23 L18,-18 L17,-17 L14,-15.5 C15,-13.5 15.5,-11 16,-9 L20,-8 L20,-5.5 L20,0 L20,5.5 L20,8 L16,9 C15.5,11 15,13.5 14,15.5 L17,17 L18,18 L15.5,23 L13.5,23 L10,21 C8,22.5 6,23.5 4,24 L3,28 L0,28 L-3,28 L-4,24 C-6,23.5 -8,22.5 -10,21 L-13.5,23 L-15.5,23 L-18,18 L-17,17 L-14,15.5 C-15,13.5 -15.5,11 -16,9 L-20,8 L-20,5.5 L-20,0 L-20,-5.5 L-20,-8 L-16,-9 C-15.5,-11 -15,-13.5 -14,-15.5 L-17,-17 L-18,-18 L-15.5,-23 L-13.5,-23 L-10,-21 C-8,-22.5 -6,-23.5 -4,-24 L-3,-28 Z" fill="url(#gearGrad1)" opacity="0.95">
+<animatetransform attributename="transform" dur="25s" repeatcount="indefinite" type="rotate" values="0;360"></animatetransform>
+</path>
+<circle cx="0" cy="0" fill="#0f2847" r="10"></circle>
+<circle cx="0" cy="0" fill="none" opacity="0.6" r="6" stroke="#60a5fa" stroke-width="1.5"></circle>
+</g>
+<!-- 中齒輪（右上） -->
+<g transform="translate(65,32)">
+<path d="M0,-18 L2,-18 L3,-15.5 C4.5,-15 5.5,-14 7,-13 L9,-14.5 L10,-14.5 L12,-11 L11,-10.5 L9,-9.5 C9.8,-8 10,-7 10.2,-5.5 L13,-5 L13,-3.5 L13,0 L13,3.5 L13,5 L10.2,5.5 C10,7 9.8,8 9,9.5 L11,10.5 L12,11 L10,14.5 L9,14.5 L7,13 C5.5,14 4.5,15 3,15.5 L2,18 L0,18 L-2,18 L-3,15.5 C-4.5,15 -5.5,14 -7,13 L-9,14.5 L-10,14.5 L-12,11 L-11,10.5 L-9,9.5 C-9.8,8 -10,7 -10.2,5.5 L-13,5 L-13,3.5 L-13,0 L-13,-3.5 L-13,-5 L-10.2,-5.5 C-10,-7 -9.8,-8 -9,-9.5 L-11,-10.5 L-12,-11 L-10,-14.5 L-9,-14.5 L-7,-13 C-5.5,-14 -4.5,-15 -3,-15.5 L-2,-18 Z" fill="url(#gearGrad2)" opacity="0.9">
+<animatetransform attributename="transform" dur="18s" repeatcount="indefinite" type="rotate" values="360;0"></animatetransform>
+</path>
+<circle cx="0" cy="0" fill="#0f2847" r="6.5"></circle>
+<circle cx="0" cy="0" fill="none" opacity="0.5" r="4" stroke="#93c5fd" stroke-width="1"></circle>
+</g>
+<!-- 小齒輪（右下） -->
+<g transform="translate(75,58)">
+<path d="M0,-12 L1.5,-12 L2,-10.5 C3,-10 4,-9.5 5,-8.5 L6.5,-9.5 L7,-9.5 L8.5,-7 L7.5,-6.5 L6,-6 C6.5,-5 6.8,-4.5 7,-3.5 L9,-3 L9,-2 L9,0 L9,2 L9,3 L7,3.5 C6.8,4.5 6.5,5 6,6 L7.5,6.5 L8.5,7 L7,9.5 L6.5,9.5 L5,8.5 C4,9.5 3,10 2,10.5 L1.5,12 L0,12 L-1.5,12 L-2,10.5 C-3,10 -4,9.5 -5,8.5 L-6.5,9.5 L-7,9.5 L-8.5,7 L-7.5,6.5 L-6,6 C-6.5,5 -6.8,4.5 -7,3.5 L-9,3 L-9,2 L-9,0 L-9,-2 L-9,-3 L-7,-3.5 C-6.8,-4.5 -6.5,-5 -6,-6 L-7.5,-6.5 L-8.5,-7 L-7,-9.5 L-6.5,-9.5 L-5,-8.5 C-4,-9.5 -3,-10 -2,-10.5 L-1.5,-12 Z" fill="url(#gearGrad2)" opacity="0.85">
+<animatetransform attributename="transform" dur="12s" repeatcount="indefinite" type="rotate" values="0;360"></animatetransform>
+</path>
+<circle cx="0" cy="0" fill="#0f2847" r="4.5"></circle>
+</g>
+<!-- 小齒輪（左上） -->
+<g transform="translate(22,28)">
+<path d="M0,-10 L1.2,-10 L1.6,-8.5 C2.5,-8 3.2,-7.5 4,-6.8 L5.2,-7.8 L5.8,-7.8 L7,-5.5 L6.2,-5 L5,-4.8 C5.3,-4 5.5,-3.5 5.6,-2.8 L7.2,-2.5 L7.2,-1.5 L7.2,0 L7.2,1.5 L7.2,2.5 L5.6,2.8 C5.5,3.5 5.3,4 5,4.8 L6.2,5 L7,5.5 L5.8,7.8 L5.2,7.8 L4,6.8 C3.2,7.5 2.5,8 1.6,8.5 L1.2,10 L0,10 L-1.2,10 L-1.6,8.5 C-2.5,8 -3.2,7.5 -4,6.8 L-5.2,7.8 L-5.8,7.8 L-7,5.5 L-6.2,5 L-5,4.8 C-5.3,4 -5.5,3.5 -5.6,2.8 L-7.2,2.5 L-7.2,1.5 L-7.2,0 L-7.2,-1.5 L-7.2,-2.5 L-5.6,-2.8 C-5.5,-3.5 -5.3,-4 -5,-4.8 L-6.2,-5 L-7,-5.5 L-5.8,-7.8 L-5.2,-7.8 L-4,-6.8 C-3.2,-7.5 -2.5,-8 -1.6,-8.5 L-1.2,-10 Z" fill="url(#gearGrad1)" opacity="0.8">
+<animatetransform attributename="transform" dur="10s" repeatcount="indefinite" type="rotate" values="360;0"></animatetransform>
+</path>
+<circle cx="0" cy="0" fill="#0f2847" r="3.5"></circle>
+</g>
 </svg> FHI齒輪廠估算資料表</h1>
 <span style="font-size:0.8rem; opacity:0.75; font-weight:400; letter-spacing:0.5px; margin-right:16px;">林家弘製作</span>
 <div class="header-actions">
@@ -378,6 +382,16 @@ body { font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; background: va
 <i class="fas fa-chevron-down toggle-icon"></i>
 </div>
 <div class="section-body">
+<div style="display:flex; gap:12px; align-items:center; margin-bottom:12px; flex-wrap:wrap;">
+<div style="display:flex; align-items:center; gap:8px;">
+<label style="font-weight:600; font-size:0.85rem; white-space:nowrap;">軸承型式</label>
+<select id="bearing-type-filter" onchange="searchBearing()" style="padding:6px 12px; border:1px solid #e2e8f0; border-radius:6px; font-size:0.85rem; min-width:120px;">
+<option value="">全部</option>
+<option value="滑動軸承">滑動軸承</option>
+<option value="滾動軸承">滾動軸承</option>
+</select>
+</div>
+</div>
 <div class="search-box">
 <i class="fas fa-search"></i>
 <input id="bearing-search" oninput="searchBearing()" placeholder="輸入規格關鍵字搜尋（如：內徑160、錯位瓦、滾動）" type="text"/>
@@ -397,6 +411,72 @@ body { font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; background: va
 <i class="fas fa-chevron-down toggle-icon"></i>
 </div>
 <div class="section-body">
+<div style="display:flex; gap:12px; align-items:center; margin-bottom:12px; flex-wrap:wrap;">
+<div style="display:flex; align-items:center; gap:8px;">
+<label style="font-weight:600; font-size:0.85rem; white-space:nowrap;">產品名稱</label>
+<select id="hw-name-filter" onchange="searchHardware()" style="padding:6px 12px; border:1px solid #e2e8f0; border-radius:6px; font-size:0.85rem; min-width:150px;">
+<option value="">全部</option>
+<option value="(空白)">(空白)</option>
+<option value="100%墊圈">100%墊圈</option>
+<option value="Accelerator加速規">Accelerator加速規</option>
+<option value="Allweiler Screw pump">Allweiler Screw pump</option>
+<option value="AllweilerPump">AllweilerPump</option>
+<option value="CLUTCH">CLUTCH</option>
+<option value="Converter">Converter</option>
+<option value="Localcontrolpanel">Localcontrolpanel</option>
+<option value="Pump">Pump</option>
+<option value="RTD">RTD</option>
+<option value="RickmeierPump">RickmeierPump</option>
+<option value="ScrewPump">ScrewPump</option>
+<option value="Soft starter">Soft starter</option>
+<option value="三相變頻控制器">三相變頻控制器</option>
+<option value="不鏽鋼端子箱">不鏽鋼端子箱</option>
+<option value="不鏽鋼防爆電纜接頭">不鏽鋼防爆電纜接頭</option>
+<option value="五金零件">五金零件</option>
+<option value="位置信號檢測器">位置訊號檢測器</option>
+<option value="僅前置器">僅前置器</option>
+<option value="僅延伸電纜">僅延伸電纜</option>
+<option value="僅振動探頭">僅振動探頭</option>
+<option value="共同底座">共同底座</option>
+<option value="屋外三相鼠籠式感應馬達">屋外三相鼠籠式感應馬達</option>
+<option value="振動探頭組">振動探頭組</option>
+<option value="振動變送器Transmitter">振動變送器Transmitter</option>
+<option value="接線箱">接線箱</option>
+<option value="支臂">支臂</option>
+<option value="木箱">木箱</option>
+<option value="橡膠護面封油環">橡膠護面封油環</option>
+<option value="油壓式制動器">油壓式制動器</option>
+<option value="油體式聯軸器">油體式聯軸器</option>
+<option value="法蘭">法蘭</option>
+<option value="浪湧保護器surge protection">浪湧保護器surge protection</option>
+<option value="減速機">減速機</option>
+<option value="溫度變送器Transmitter">溫度變送器Transmitter</option>
+<option value="界限開關">界限開關</option>
+<option value="盤車電機">盤車電機</option>
+<option value="直測式雙金屬溫度計">直測式雙金屬溫度計</option>
+<option value="碳鋼自動電焊線">碳鋼自動電焊線</option>
+<option value="管殼式熱交換器">管殼式熱交換器</option>
+<option value="聯軸器組裝配件">聯軸器組裝配件</option>
+<option value="蓋板組">蓋板組</option>
+<option value="螺旋千斤頂">螺旋千斤頂</option>
+<option value="軸上配件防護罩配管件">軸上配件防護罩配管件</option>
+<option value="軸承座">軸承座</option>
+<option value="迷宮式油封">迷宮式油封</option>
+<option value="追加頂升設計費用">追加頂升設計費用</option>
+<option value="過濾器">過濾器</option>
+<option value="配線及支撐架修理包">配線及支撐架修理包</option>
+<option value="鍵相探頭">鍵相探頭</option>
+<option value="防護罩">防護罩</option>
+<option value="隔測式雙金屬溫度計">隔測式雙金屬溫度計</option>
+<option value="隔爆型Exd端子箱">隔爆型Exd端子箱</option>
+<option value="馬達緩衝啟動器">馬達緩衝啟動器</option>
+<option value="齒輪減速機">齒輪減速機</option>
+<option value="齒輪箱組裝配件">齒輪箱組裝配件</option>
+<option value="齒輪箱配管零件">齒輪箱配管零件</option>
+<option value="齒輪聯軸器">齒輪聯軸器</option>
+</select>
+</div>
+</div>
 <div class="search-box">
 <i class="fas fa-search"></i>
 <input id="hw-search" oninput="searchHardware()" placeholder="輸入產品名稱/廠牌/規格搜尋" type="text"/>
@@ -418,6 +498,65 @@ body { font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; background: va
 <div class="section-body">
 <div id="ship-items"></div>
 <button class="btn-add" onclick="addShipRow()"><i class="fas fa-plus"></i> 新增運費</button>
+<div style="margin-top:16px; margin-bottom:16px;">
+<details style="border:1px solid #e2e8f0; border-radius:8px; overflow:hidden;">
+<summary style="padding:10px 16px; background:#f7fafc; cursor:pointer; font-weight:700; color:#2c5282; font-size:0.9rem;">
+<i class="fas fa-list-alt" style="margin-right:6px;"></i> 運費參考表（點選展開）
+</summary>
+<div style="max-height:300px; overflow-y:auto;">
+<table class="data-table" style="width:100%; font-size:0.85em;">
+<thead style="position:sticky; top:0; background:#edf2f7;"><tr>
+<th style="width:70px;">運輸方式</th>
+<th>國家/港口/地點</th>
+<th style="width:90px;">規格</th>
+<th style="width:100px; text-align:right;">價格(NT)</th>
+</tr></thead>
+<tbody>
+<tr><td>海運</td><td>中國上海</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>中國上海</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">9,300</td></tr>
+<tr><td>海運</td><td>中國天津</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>中國天津</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">9,300</td></tr>
+<tr><td>海運</td><td>中國寧波</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>中國寧波</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">4,650</td></tr>
+<tr><td>海運</td><td>日本KOBE</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>日本KOBE</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">8,680</td></tr>
+<tr><td>海運</td><td>印尼PANJANG</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>印尼PANJANG</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">24,800</td></tr>
+<tr><td>海運</td><td>印尼三寶瓏</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>印尼三寶瓏</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">20,150</td></tr>
+<tr><td>海運</td><td>印尼雅加達</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>印尼雅加達</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">14,880</td></tr>
+<tr><td>海運</td><td>美國休士頓</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">9,300</td></tr>
+<tr><td>海運</td><td>美國休士頓</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">114,700</td></tr>
+<tr><td>海運</td><td>美國查爾斯頓</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">9,300</td></tr>
+<tr><td>海運</td><td>美國查爾斯頓</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">80,600</td></tr>
+<tr><td>海運</td><td>美國洛杉磯</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">9,300</td></tr>
+<tr><td>海運</td><td>美國洛杉磯</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">58,900</td></tr>
+<tr><td>海運</td><td>泰國曼谷</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>泰國曼谷</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">11,160</td></tr>
+<tr><td>海運</td><td>馬來西亞巴生港</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>馬來西亞巴生港</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">10,230</td></tr>
+<tr><td>海運</td><td>菲律賓馬里拉</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>菲律賓馬里拉</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">8,370</td></tr>
+<tr><td>海運</td><td>菲律賓蘇比克灣</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>菲律賓蘇比克灣</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">11,780</td></tr>
+<tr><td>海運</td><td>越南海防</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>越南海防</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">7,750</td></tr>
+<tr><td>海運</td><td>新加坡</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>新加坡</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">13,330</td></tr>
+<tr><td>海運</td><td>韓國仁川</td><td>併櫃1CBM</td><td style="text-align:right; font-weight:600;">3,100</td></tr>
+<tr><td>海運</td><td>韓國仁川</td><td>普通櫃</td><td style="text-align:right; font-weight:600;">17,050</td></tr>
+<tr><td>陸運</td><td>臺南61-120km</td><td>9T</td><td style="text-align:right; font-weight:600;">4,650</td></tr>
+<tr><td>陸運</td><td>宜蘭/東山261-480km</td><td>9T</td><td style="text-align:right; font-weight:600;">13,200</td></tr>
+<tr><td>陸運</td><td>屏東31-60km</td><td>9T</td><td style="text-align:right; font-weight:600;">3,300</td></tr>
+<tr><td>陸運</td><td>苗栗以北241-360km</td><td>9T</td><td style="text-align:right; font-weight:600;">10,600</td></tr>
+<tr><td>陸運</td><td>高雄15km</td><td>9T</td><td style="text-align:right; font-weight:600;">2,350</td></tr>
+<tr><td>陸運</td><td>雲林121-240km</td><td>9T</td><td style="text-align:right; font-weight:600;">7,000</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
 <!-- CBM 計算器 -->
 <div style="margin-top:20px; border:2px solid #3182ce; border-radius:12px; padding:16px; background:linear-gradient(135deg, #ebf8ff, #bee3f8);">
 <h4 style="margin:0 0 12px 0; color:#2c5282; font-size:0.95rem;">
@@ -466,7 +605,119 @@ body { font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; background: va
 <tbody id="labor-tbody"></tbody>
 </table>
 </div>
-<div style="margin-top:12px; text-align:right; font-weight:700; color:var(--primary);">小計：<span id="labor-subtotal">$0</span></div>
+<div style="margin-top:12px; text-align:right; font-weight:700; color:var(--primary);">小計：<span id="labor-subtotal">$0</span></div><div style="margin-top:8px; display:flex; justify-content:flex-end; align-items:center; gap:8px;">
+<label style="font-weight:600; color:#92400e;"><i class="fas fa-truck"></i> 外包費用：</label>
+<span>$</span><input id="outsource-cost" min="0" onchange="recalcAll()" style="width:120px; padding:4px 8px; border:1px solid #fbbf24; border-radius:4px; text-align:right; font-weight:700;" type="number" value="0"/>
+<span style="color:#92400e;">NT</span>
+</div>
+</div>
+</div>
+<!-- 七、計算工時 -->
+<div class="section">
+<div class="section-header" onclick="toggleSection(this)">
+<h2><span class="section-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);"><i class="fas fa-clock"></i></span> 七、計算工時 <span class="badge" id="badge-workhour">選擇裝置</span></h2>
+<i class="fas fa-chevron-down toggle-icon"></i>
+</div>
+<div class="section-body">
+<!-- 設計/工規選項 -->
+<div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; padding:8px; background:#f0fdf4; border:1px solid #86efac; border-radius:8px;">
+<span style="font-weight:700; color:#166534; margin-right:8px;"><i class="fas fa-drafting-compass" style="margin-right:4px;"></i>設計：</span>
+<label class="wh-radio"><input name="wh-design" type="radio" value="設計出舊圖"/> 出舊圖(40H)</label>
+<label class="wh-radio"><input name="wh-design" type="radio" value="設計改速比"/> 改速比(80H)</label>
+<label class="wh-radio"><input name="wh-design" type="radio" value="設計改軸承座"/> 改軸承座(120H)</label>
+<label class="wh-radio"><input name="wh-design" type="radio" value="設計全新設計"/> 全新設計(150H)</label>
+<span style="margin-left:16px; font-weight:700; color:#166534;"><i class="fas fa-stopwatch" style="color:#166534; margin-right:4px;"></i>工規：</span>
+<label class="wh-radio"><input name="wh-standard" type="radio" value="工規新案"/> 新案(44H)</label>
+<label class="wh-radio"><input name="wh-standard" type="radio" value="工規舊案"/> 舊案(35H)</label>
+</div>
+<!-- 遞送輸筒 -->
+<fieldset style="border:2px solid #bfdbfe; border-radius:8px; padding:10px; margin-bottom:12px; background:#f0f9ff;">
+<legend style="font-weight:700; padding:0 8px; font-size:0.95em; color:#16a34a;"><i class="fas fa-cogs" style="color:#16a34a; margin-right:6px;"></i>高速齒輪箱</legend>
+<div style="display:flex; flex-wrap:wrap; gap:6px;">
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA280B"/> TA280B</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA320B"/> TA320</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA500LP"/> TA500-LP</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA560B"/> TA560</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA570"/> TA570</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA600A"/> TA-600A</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA600B"/> TA600</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA630B"/> TA630</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA670"/> TA670</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA710"/> TA710</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA710A"/> TA710A</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA750"/> TA750</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TA1100"/> TA1100</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="STA500"/> STA500</label>
+</div>
+</fieldset>
+<!-- 冷卻水塔 -->
+<fieldset style="border:2px solid #a5f3fc; border-radius:8px; padding:10px; margin-bottom:12px; background:#f0fdfa;">
+<legend style="font-weight:700; padding:0 8px; font-size:0.95em; color:#0891b2;"><i class="fas fa-tint" style="color:#0891b2; margin-right:6px;"></i>冷卻水塔</legend>
+<div style="display:flex; flex-wrap:wrap; gap:6px;">
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KAVU310"/> KAVU310</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KAVU385"/> KAVU385</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KAVU420"/> KAVU420</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KAVU310GR整修"/> KAVU310整修</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KAVU385整修"/> KAVU385整修</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KAVU420GR整修"/> KAVU420整修</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KAVU3"/> KAVU350</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KAVU400KD395SFW"/> KAVU400/KD395-SFW</label>
+</div>
+</fieldset>
+<!-- 軋鋼機 -->
+<fieldset style="border:2px solid #fecaca; border-radius:8px; padding:10px; margin-bottom:12px; background:#fff5f5;">
+<legend style="font-weight:700; padding:0 8px; font-size:0.95em; color:#dc2626;"><i class="fas fa-industry" style="color:#dc2626; margin-right:6px;"></i>軋鋼機</legend>
+<div style="display:flex; flex-wrap:wrap; gap:6px;">
+<label class="wh-radio"><input name="wh-equip" type="radio" value="A280KD325SFW"/> A250/KD325-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="A355KD325SFW"/> A355/KD325-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="A390KD400SFW"/> A390/KD400-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="A800KD520SFW"/> A800/KD520-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="A1102A897KD375SFW"/> A1102A897/KD375-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="B400KD320SFW"/> B400/KD320-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="B520KD400SFW"/> B520/KD400-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="B560KD400SFW"/> B560/KD400-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KV620KDV380SFW"/> KV620/KDV380-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KV680KD380SFW"/> KV680/KD380-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KBV560KDV410SFW"/> KBV560/KDV410-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KBV800KDV585SFW"/> KBV800/KDV585-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KBV870KDV780HFW"/> KBV870/KDV780-HFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KBV900KDV635SFW"/> KBV900/KDV635-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KBV960KDV780HFW"/> KBV960/KDV780-HFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KAV450KDV400SFW"/> KAV450/KDV400-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KAV500KDV395SFW"/> KAV500/KDV395-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KAV550KDV400SFW"/> KAV550/KDV400-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KCV900KDV560SFW"/> KCV900/KDV560-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KCV900KDV800SFW"/> KCV900/KDV800-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="KCV1050KDV695SFW"/> KCV1050/KDV695-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="CK850KD780HFW"/> CK850/KD780-HFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="CK900KD780HFW"/> CK900/KD780-HFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="PB1500KD540SFW"/> PB1500/KD540-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="軋鋼C555KD410SFW"/> C555/KD410-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="軋鋼KCV1110KD810SFW"/> KCV1110/KD810-SFW</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="MAINDRIVEREDUCERF3"/> F3</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="MAINDRIVEREDUCERF4"/> F4</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="PinionStandGearboxF1F4"/> Pinion Stand F1-F4</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="PinionStandGearboxF5F7"/> Pinion Stand F5-F7</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="SSPMainReducerGearbox"/> SSP</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="SSPBEVELMainReducerGearbox"/> SSP BEVEL</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="ROLLDRIVEREDUCERE2"/> E2 ROLL DRIVE</label>
+</div>
+</fieldset>
+ 塑膠押出機 
+<fieldset style="border:2px solid #ddd6fe; border-radius:8px; padding:10px; margin-bottom:12px; background:#faf5ff;">
+<legend style="font-weight:700; padding:0 8px; font-size:0.95em; color:#7c3aed;"><i class="fas fa-recycle" style="color:#7c3aed; margin-right:6px;"></i>塑膠押出機</legend>
+<div style="display:flex; flex-wrap:wrap; gap:6px;">
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TSE90E"/> TSE90E</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TSE130N"/> TSE130N</label>
+<label class="wh-radio"><input name="wh-equip" type="radio" value="TSE90ETSE130N"/> TSE90E/TSE130N</label>
+</div>
+</fieldset>
+<!-- 按鈕 -->
+<div style="display:flex; gap:10px; margin-top:12px;">
+<button onclick="applyWorkHours()" style="padding:10px 24px; background:linear-gradient(135deg,#2563eb,#1d4ed8); color:white; border:none; border-radius:8px; font-weight:700; font-size:0.95em; cursor:pointer;"><i class="fas fa-calculator"></i> 計算工時</button>
+<button onclick="clearWorkHours()" style="padding:10px 24px; background:linear-gradient(135deg,#dc2626,#b91c1c); color:white; border:none; border-radius:8px; font-weight:700; font-size:0.95em; cursor:pointer;"><i class="fas fa-trash"></i> 清除</button>
+</div>
+<div id="wh-status" style="margin-top:8px; padding:8px 12px; border-radius:6px; display:none;"></div>
 </div>
 </div>
 <!-- 報價總覽 -->
@@ -554,7 +805,7 @@ function onProdTypeChange() {
 function onProdModelChange() {
   const model = document.getElementById('prod-model').value;
   const item = DB_PROD.find(p => p.model === model);
-  document.getElementById('prod-weight').value = item ? fmtN(item.weight) + ' KG' : '';
+  document.getElementById('prod-weight').value = item ? fmtN(item.reducerWeight) + ' KG' : '';
 }
 
 // ===== GEAR SHAFT =====
@@ -673,10 +924,15 @@ function calcBoxTotal() {
 let bearingItems = [];
 function searchBearing() {
   const q = document.getElementById('bearing-search').value.trim().toLowerCase();
+  const typeFilter = document.getElementById('bearing-type-filter').value;
   const resultsDiv = document.getElementById('bearing-results');
-  if (!q) { resultsDiv.style.display = 'none'; return; }
-  const keywords = q.split(/\s+/);
-  const matches = DB_BEARING.filter(b => keywords.every(k => b.spec.toLowerCase().includes(k) || b.type.toLowerCase().includes(k))).slice(0, 30);
+  if (!q && !typeFilter) { resultsDiv.style.display = 'none'; return; }
+  const keywords = q ? q.split(/\s+/) : [];
+  const matches = DB_BEARING.filter(b => {
+    if (typeFilter && b.type !== typeFilter) return false;
+    if (keywords.length > 0) return keywords.every(k => b.spec.toLowerCase().includes(k) || b.type.toLowerCase().includes(k));
+    return true;
+  }).slice(0, 30);
   if (matches.length === 0) { resultsDiv.innerHTML = '<div style="padding:10px;font-size:0.8rem;color:var(--text-light)">無符合結果</div>'; resultsDiv.style.display = 'block'; return; }
   resultsDiv.innerHTML = matches.map((m, i) => `<div class="search-item" onclick="addBearing(${i})" data-idx="${i}">
     <span>[${m.type}] ${m.spec}</span><span class="item-price">${m.price > 0 ? fmt(m.price) : '議價'}</span></div>`).join('');
@@ -710,12 +966,15 @@ function removeBearing(i) { bearingItems.splice(i, 1); renderBearingTable(); rec
 let hwItems = [];
 function searchHardware() {
   const q = document.getElementById('hw-search').value.trim().toLowerCase();
+  const nameFilter = document.getElementById('hw-name-filter').value;
   const resultsDiv = document.getElementById('hw-results');
-  if (!q) { resultsDiv.style.display = 'none'; return; }
-  const keywords = q.split(/\s+/);
-  const matches = DB_HW.filter(h => keywords.every(k =>
-    h.name.toLowerCase().includes(k) || h.brand.toLowerCase().includes(k) || h.spec.toLowerCase().includes(k)
-  )).slice(0, 30);
+  if (!q && !nameFilter) { resultsDiv.style.display = 'none'; return; }
+  const keywords = q ? q.split(/\s+/) : [];
+  const matches = DB_HW.filter(h => {
+    if (nameFilter && h.name !== nameFilter) return false;
+    if (keywords.length > 0) return keywords.every(k => h.name.toLowerCase().includes(k) || h.brand.toLowerCase().includes(k) || h.spec.toLowerCase().includes(k));
+    return true;
+  }).slice(0, 30);
   if (matches.length === 0) { resultsDiv.innerHTML = '<div style="padding:10px;font-size:0.8rem;color:var(--text-light)">無符合結果</div>'; resultsDiv.style.display = 'block'; return; }
   resultsDiv.innerHTML = matches.map((m, i) => `<div class="search-item" onclick="addHardware(${i})">
     <span>${m.name}${m.brand ? ' ['+m.brand+']' : ''}${m.spec ? ' - '+m.spec : ''}</span>
@@ -774,7 +1033,7 @@ function onShipMethodChange(id) {
   const method = document.getElementById(`ship-method-${id}`).value;
   const sel = document.getElementById(`ship-dest-${id}`);
   sel.innerHTML = '<option value="">選擇</option>';
-  const dests = [...new Set(DB_SHIP.filter(s => s.method === method).map(s => s.dest))];
+  const dests = [...new Set(DB_SHIP.filter(s => s.method === method).map(s => s.destination))];
   dests.forEach(d => { const o = document.createElement('option'); o.value = d; o.textContent = d; sel.appendChild(o); });
   document.getElementById(`ship-spec-${id}`).innerHTML = '<option value="">先選地點</option>';
   document.getElementById(`ship-amount-${id}`).value = '';
@@ -784,7 +1043,7 @@ function onShipDestChange(id) {
   const dest = document.getElementById(`ship-dest-${id}`).value;
   const sel = document.getElementById(`ship-spec-${id}`);
   sel.innerHTML = '<option value="">選擇</option>';
-  DB_SHIP.filter(s => s.method === method && s.dest === dest).forEach(s => {
+  DB_SHIP.filter(s => s.method === method && s.destination === dest).forEach(s => {
     const o = document.createElement('option'); o.value = s.price; o.textContent = s.spec + ' ($' + fmtN(s.price) + ')'; sel.appendChild(o);
   });
 }
@@ -868,7 +1127,7 @@ function updateBadge(type) {
 }
 
 // ===== DONUT CHART =====
-const COLORS = ['#3182ce','#d69e2e','#38a169','#805ad5','#e53e3e','#319795'];
+const COLORS = ['#3182ce','#d69e2e','#38a169','#805ad5','#e53e3e','#319795','#dd6b20'];
 function drawDonut(values, labels) {
   const svg = document.getElementById('donut-chart');
   const legend = document.getElementById('donut-legend');
@@ -965,7 +1224,8 @@ function recalcAll() {
   const hw = getSubtotal('hw-subtotal');
   const ship = getSubtotal('ship-subtotal');
   const labor = getSubtotal('labor-subtotal');
-  const cost = gear + box + bearing + hw + ship + labor;
+  const outsource = parseFloat(document.getElementById('outsource-cost').value) || 0;
+    const cost = gear + box + bearing + hw + ship + labor + outsource;
 
   const marginRate = parseFloat(document.getElementById('param-margin').value) || 0;
 
@@ -999,7 +1259,7 @@ function recalcAll() {
   document.getElementById('kpi-quote').textContent = fmt(quote);
 
   // Donut
-  drawDonut([gear, box, bearing, hw, ship, labor], ['齒輪軸件','箱體','軸承','五金零件','運費','工繳']);
+  drawDonut([gear,box,bearing,hw,ship,labor,outsource],['齒輪軸件','箱體','軸承','五金零件','運費','工繳','外包']);;
 }
 
 // ===== SETTINGS MODAL (Bar price table) =====
@@ -1125,33 +1385,43 @@ function exportData() {
   for (var s = 1; s <= shipCount && s <= 2; s++) {
     var sRow = [];
     var smEl = document.getElementById('ship-method-' + s);
-    sRow[2] = smEl ? smEl.value : '';  // C: 運輸方式
+    sRow[2] = smEl ? smEl.value : '';  // C68: 運輸方式
+    var sdEl = document.getElementById('ship-dest-' + s);
+    sRow[5] = sdEl ? sdEl.value : '';  // F68: 地點
     var sqEl = document.getElementById('ship-qty-' + s);
-    sRow[5] = sqEl ? Number(sqEl.value) || '' : '';  // F: 數量
+    sRow[8] = sqEl ? Number(sqEl.value) || '' : '';  // I68: 數量
     var ssEl = document.getElementById('ship-spec-' + s);
-    sRow[6] = ssEl ? ssEl.value : '';  // G: CBM/規格
-    var scEl = document.getElementById('ship-cost-' + s);
-    sRow[8] = scEl ? Number(scEl.value) || '' : '';  // I: 單位成本
+    sRow[9] = ssEl ? ssEl.value : '';  // J68: 規格
     wsData.push(sRow);
   }
   for (var s2 = shipCount + 1; s2 <= 2; s2++) wsData.push([]);
 
-  // Row 70-74: 小計 + 工繳標題
-  wsData.push([]); wsData.push([]); wsData.push([]); wsData.push([]); wsData.push([]);
+  // Row 70-74: 小計 + 外包 + 工繳標題
+  wsData.push([]); wsData.push([]);
+  // Row 72: 外包費用在 M72
+  var outsourceRow = [];
+  var outsourceVal = parseFloat(document.getElementById('outsource-cost').value) || 0;
+  outsourceRow[12] = outsourceVal;  // M72: 外包費用
+  wsData.push(outsourceRow);
+  wsData.push([]); wsData.push([]);
 
-  // === 五、工繳 Row 75-101 ===
+  // === 五、工繳 Row 75- ===
   // 工繳只需填入工時 (Col F = index 5)
-  var laborCodes = [
-    'EJ320','EJ40A','EJC00','EJ400','EJ200','EJ210','EJ270',
-    'EJ250','EJ260','EJB00','EJD00','EJG00','EJH00','EJI00',
-    'J3B10','J3B20','J3B30','J3BA0','J3B60','J3BF0','J3BG0',
-    'J3BH0','J3BI0','J3BJ0','J3BK0','J3BT0','J3BL0'
-  ];
-  for (var lc = 0; lc < laborCodes.length; lc++) {
+  // validLabor: idx 0-2 寫入 Row 75-77，插 2 空行，idx 3 (組裝)起從 Row 80 開始
+  var laborInputs = document.querySelectorAll('#labor-tbody input[type="number"]');
+  // 前 3 筆: Row 75-77
+  for (var li = 0; li < 3 && li < laborInputs.length; li++) {
     var lRow = [];
-    var lhEl = document.getElementById('labor-hr-' + lc);
-    lRow[5] = lhEl ? Number(lhEl.value) || 0 : 0;  // F: 工時
+    lRow[5] = Number(laborInputs[li].value) || 0;  // F: 工時
     wsData.push(lRow);
+  }
+  // 插入 2 空行 (Row 78-79)
+  wsData.push([]); wsData.push([]);
+  // idx 3 (組裝) 起從 Row 80 開始
+  for (var li2 = 3; li2 < laborInputs.length; li2++) {
+    var lRow2 = [];
+    lRow2[5] = Number(laborInputs[li2].value) || 0;  // F: 工時
+    wsData.push(lRow2);
   }
 
   // 建立 workbook
@@ -1312,6 +1582,108 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+
+// ===== WORK HOUR CALCULATOR (injected) =====
+var WORK_HOUR_DB = {"TA560B": {"outsource": 27025.0, "hours": [60.0, 93.0, 56.0, 601.0, 11.0, 0.0, 6.0, 49.0, 9.0, 4.0, 16.0, 2.0, 66.0, 0.0, 0.0, 0.0, 22.0, 0.0, 0.0, 82.0, 14.0, 0.0, 4.0, 0.0, 22.0]}, "TA570": {"outsource": 18720.0, "hours": [60.0, 60.0, 40.0, 213.0, 10.0, 0.0, 7.0, 44.0, 0.0, 0.0, 9.0, 4.0, 40.0, 0.0, 0.0, 8.0, 27.0, 0.0, 0.0, 38.0, 12.0, 10.0, 6.0, 0.0, 15.0]}, "STA500": {"outsource": 522340.0, "hours": [60.0, 104.0, 40.0, 330.0, 5.0, 0.0, 0.0, 153.5, 0.0, 3.0, 34.5, 7.0, 39.5, 0.0, 0.0, 0.0, 27.0, 0.0, 0.0, 49.0, 18.0, 0.0, 0.0, 2.0, 24.0]}, "TA750": {"outsource": 58564.0, "hours": [60.0, 73.5, 64.0, 359.0, 11.0, 0.0, 7.0, 41.0, 35.0, 0.0, 20.0, 3.0, 0.0, 0.0, 0.0, 0.0, 24.0, 0.0, 0.0, 82.0, 6.0, 32.5, 8.0, 0.0, 21.0]}, "TA500LP": {"outsource": 1034510.0, "hours": [60.0, 50.0, 30.0, 244.0, 13.5, 0.0, 4.3, 0.0, 0.0, 2.0, 0.0, 2.5, 15.0, 2.0, 0.0, 9.5, 0.0, 0.0, 0.0, 70.0, 0.0, 10.0, 0.0, 0.0, 0.0]}, "TA320B": {"outsource": 76977.0, "hours": [120.0, 36.0, 50.0, 182.0, 5.0, 0.0, 4.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 0.0, 0.0, 32.0, 14.0, 0.0, 0.0, 8.0, 16.0]}, "TA280B": {"outsource": 25238.0, "hours": [70.0, 50.0, 40.0, 140.0, 6.0, 0.0, 5.0, 40.0, 0.0, 0.0, 17.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 43.0, 10.0, 0.0, 0.0, 8.0, 20.0]}, "設計出舊圖": {"outsource": 0, "hours": [40.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, "設計改速比": {"outsource": 0, "hours": [80.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, "設計改軸承座": {"outsource": 0, "hours": [120.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, "設計全新設計": {"outsource": 0, "hours": [150.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, "工規新案": {"outsource": 0, "hours": [0, 0, 44.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, "工規舊案": {"outsource": 0, "hours": [0, 0, 35.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, "KAVU310": {"outsource": 0, "hours": [12.0, 16.0, 16.0, 52.0, 10.0, 13.0, 0.0, 0.0, 0.0, 5.0, 14.0, 11.0, 0.0, 0.0, 0.0, 12.0, 0.0, 14.0, 24.0, 19.0, 0.0, 23.0, 0.0, 0.0, 0.0]}, "KAVU310GR整修": {"outsource": 0, "hours": [25.0, 16.0, 16.0, 110.0, 7.0, 13.0, 0.0, 21.0, 0.0, 7.0, 8.0, 4.5, 0.0, 0.0, 0.0, 12.0, 0.0, 51.0, 39.5, 0.0, 0.0, 20.0, 0.0, 0.0, 0.0]}, "KAVU420GR整修": {"outsource": 0, "hours": [3.0, 8.0, 8.0, 36.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.0, 0.0, 0.0, 0.0]}, "KAVU385整修": {"outsource": 0, "hours": [10.0, 4.0, 8.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, "TSE90E": {"outsource": 0, "hours": [29.0, 37.6, 32.0, 71.3, 16.6, 0.0, 1.0, 0.0, 0.0, 3.0, 0.0, 16.5, 0.0, 0.0, 0.0, 27.3, 8.0, 0.0, 0.0, 36.0, 0.0, 38.0, 0.0, 4.2, 0.0]}, "TSE130N": {"outsource": 0, "hours": [7.0, 0.0, 32.0, 91.0, 0.0, 0.0, 1.0, 65.5, 0.0, 21.5, 21.0, 20.0, 22.0, 0.0, 8.0, 59.0, 0.0, 0.0, 0.0, 19.0, 0.0, 42.0, 0.0, 0.0, 0.0]}, "KAVU385": {"outsource": 0, "hours": [6.0, 48.0, 30.0, 161.0, 8.5, 24.5, 0.0, 48.0, 0.0, 8.5, 11.0, 10.1, 59.0, 0.0, 0.0, 15.0, 0.0, 54.5, 25.5, 15.3, 0.0, 24.5, 5.0, 0.0, 0.0]}, "TSE90ETSE130N": {"outsource": 0, "hours": [52.0, 750.0, 132.0, 1309.0, 218.0, 201.0, 20.0, 361.0, 0.0, 107.0, 153.0, 185.0, 152.0, 0.0, 0.0, 603.0, 144.0, 0.0, 0.0, 875.0, 0.0, 892.0, 38.0, 93.0, 0.0]}, "KAVU420": {"outsource": 0, "hours": [6.0, 53.0, 30.0, 128.0, 10.0, 28.0, 4.0, 61.0, 0.0, 12.0, 16.0, 10.0, 0.0, 0.0, 0.0, 5.0, 15.0, 53.0, 27.0, 18.0, 0.0, 21.0, 0.0, 0.0, 0.0]}, "KAVU3": {"outsource": 0, "hours": [0.0, 0.0, 0.0, 11.0, 0.0, 0.0, 0.0, 12.0, 0.0, 14.0, 24.0, 19.0, 0.0, 23.0, 0.0, 0.0, 0.0, 0, 0, 0, 5.0, 14.0, 0, 0, 0]}, "MAINDRIVEREDUCERF3": {"outsource": 0, "hours": [150.0, 350.0, 40.0, 592.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 120.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, "MAINDRIVEREDUCERF4": {"outsource": 0, "hours": [150.0, 350.0, 40.0, 592.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 120.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, "PinionStandGearboxF1F4": {"outsource": 0, "hours": [150.0, 350.0, 40.0, 574.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 110.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, "PinionStandGearboxF5F7": {"outsource": 0, "hours": [150.0, 350.0, 40.0, 574.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 96.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, "TA710": {"outsource": 52540.0, "hours": [60.0, 80.0, 40.0, 301.0, 11.0, 260.0, 8.0, 80.0, 51.0, 0.0, 22.0, 4.0, 17.0, 0.0, 0.0, 0.0, 71.0, 0.0, 0.0, 61.0, 13.0, 40.0, 11.0, 0.0, 28.0]}, "KBV960KDV780HFW": {"outsource": 583309.0, "hours": [60.0, 113.0, 40.0, 815.0, 30.0, 0.0, 31.0, 156.0, 0.0, 35.0, 24.0, 0.0, 152.0, 0.0, 0.0, 0.0, 39.0, 0.0, 89.0, 83.0, 4.0, 55.0, 82.5, 40.0, 0.0]}, "TA600A": {"outsource": 49411.0, "hours": [273.0, 51.0, 40.0, 399.0, 13.0, 0.0, 8.0, 21.0, 44.0, 11.0, 13.0, 0.0, 0.0, 0.0, 0.0, 0.0, 100.0, 0.0, 0.0, 70.0, 16.0, 0.0, 0.0, 4.0, 35.0]}, "PB1500KD540SFW": {"outsource": 223651.0, "hours": [46.0, 381.5, 40.0, 793.0, 113.5, 0.0, 5.0, 0.0, 560.0, 31.5, 0.0, 1.5, 376.0, 0.0, 0.0, 40.0, 239.5, 0.0, 0.0, 186.5, 0.0, 53.0, 462.0, 4.0, 0.0]}, "KBV560KDV410SFW": {"outsource": 144240.0, "hours": [114.0, 85.0, 50.0, 354.0, 22.0, 0.0, 0.0, 0.0, 0.0, 14.5, 0.0, 9.5, 61.0, 0.0, 0.0, 32.0, 22.0, 25.0, 34.0, 50.0, 9.0, 62.5, 237.0, 16.0, 0.0]}, "KAV550KDV400SFW": {"outsource": 100588.0, "hours": [8.0, 139.5, 38.0, 445.0, 28.5, 0.0, 5.0, 0.0, 0.0, 7.5, 0.0, 2.0, 55.0, 0.0, 0.0, 8.0, 19.0, 0.0, 66.0, 50.5, 6.5, 15.5, 33.0, 5.0, 0.0]}, "KBV900KDV635SFW": {"outsource": 440163.0, "hours": [74.0, 194.0, 40.0, 972.0, 25.0, 0.0, 0.0, 112.0, 0.0, 11.5, 0.0, 0.0, 146.0, 0.0, 0.0, 0.0, 150.5, 0.0, 44.5, 118.0, 8.5, 41.0, 73.0, 0.0, 0.0]}, "軋鋼C555KD410SFW": {"outsource": 156744.0, "hours": [370.5, 117.5, 82.0, 266.5, 27.5, 0.0, 0.0, 0.0, 0.0, 19.5, 5.0, 22.5, 50.0, 0.0, 0.0, 35.0, 86.0, 0.0, 0.0, 99.0, 0.0, 68.5, 14.5, 0.0, 0.0]}, "A800KD520SFW": {"outsource": 4356.0, "hours": [265.5, 48.0, 104.0, 274.0, 22.5, 0.0, 0.0, 77.0, 10.0, 27.0, 20.0, 9.5, 121.0, 0.0, 0.0, 0.0, 154.0, 0.0, 0.0, 44.0, 0.0, 76.0, 170.5, 44.0, 0.0]}, "A355KD325SFW": {"outsource": 41551.0, "hours": [107.0, 49.0, 32.0, 230.0, 7.0, 0.0, 0.0, 0.0, 0.0, 8.5, 0.0, 1.0, 13.0, 0.0, 0.0, 0.0, 12.0, 0.0, 0.0, 54.0, 3.0, 12.0, 3.0, 0.0, 0.0]}, "KV680KD380SFW": {"outsource": 107580.0, "hours": [89.5, 35.0, 42.0, 176.0, 12.0, 0.0, 0.0, 0.0, 0.0, 3.5, 0.0, 5.5, 32.0, 0.0, 0.0, 0.0, 0.0, 0.0, 66.0, 30.0, 11.0, 41.0, 0.0, 22.0, 0.0]}, "B520KD400SFW": {"outsource": 86843.0, "hours": [2.0, 113.0, 32.0, 270.0, 26.0, 0.0, 0.0, 0.0, 0.0, 7.5, 0.0, 2.0, 50.0, 0.0, 0.0, 17.0, 20.5, 0.0, 0.0, 85.5, 8.0, 17.0, 22.0, 17.5, 0.0]}, "B400KD320SFW": {"outsource": 46880.0, "hours": [346.5, 65.0, 60.0, 288.0, 10.0, 0.0, 0.0, 0.0, 0.0, 6.5, 0.0, 13.0, 66.0, 0.0, 0.0, 21.0, 61.0, 0.0, 0.0, 53.0, 0.0, 34.0, 0.0, 0.0, 0.0]}, "軋鋼KCV1110KD810SFW": {"outsource": 1199296.0, "hours": [75.5, 277.0, 40.0, 794.5, 0.0, 0.0, 0.0, 120.0, 0.0, 15.5, 0.0, 0.0, 262.5, 0.0, 0.0, 7.0, 141.5, 0.0, 36.5, 78.5, 8.0, 29.5, 124.0, 2.5, 0.0]}, "KV620KDV380SFW": {"outsource": 8289.0, "hours": [112.0, 68.0, 60.0, 194.0, 8.5, 0.0, 0.0, 49.0, 0.0, 8.0, 14.5, 4.5, 23.0, 0.0, 0.0, 0.0, 40.0, 0.0, 55.0, 10.0, 12.0, 29.0, 0.0, 0.0, 0.0]}, "A280KD325SFW": {"outsource": 132611.0, "hours": [16.0, 70.0, 40.0, 341.0, 19.0, 0.0, 5.0, 0.0, 0.0, 6.0, 0.0, 15.5, 0.0, 0.0, 6.5, 47.0, 25.0, 0.0, 0.0, 58.0, 5.0, 28.5, 18.0, 4.0, 0.0]}, "KCV1050KDV695SFW": {"outsource": 868106.0, "hours": [126.0, 92.0, 62.0, 552.0, 36.5, 0.0, 0.0, 195.0, 110.0, 11.0, 0.0, 7.0, 94.0, 0.0, 0.0, 21.0, 160.0, 0.0, 59.5, 107.0, 9.0, 49.5, 108.0, 32.0, 0.0]}, "KBV800KDV585SFW": {"outsource": 564177.0, "hours": [114.5, 81.0, 66.0, 365.5, 25.0, 0.0, 5.0, 0.0, 60.0, 7.5, 0.0, 5.5, 76.0, 0.0, 0.0, 0.0, 55.5, 0.0, 69.0, 92.0, 10.0, 40.0, 51.0, 32.0, 0.0]}, "A1102A897KD375SFW": {"outsource": 879869.0, "hours": [773.5, 248.0, 73.0, 588.5, 112.0, 0.0, 5.0, 140.0, 22.0, 5.0, 37.0, 15.5, 237.0, 0.0, 0.0, 108.0, 158.0, 0.0, 0.0, 174.0, 35.0, 82.0, 197.0, 0.0, 0.0]}, "KCV900KDV560SFW": {"outsource": 514471.0, "hours": [111.5, 86.0, 64.0, 408.0, 34.5, 0.0, 0.0, 145.0, 111.0, 7.5, 5.5, 8.0, 89.0, 0.0, 0.0, 21.0, 246.0, 0.0, 57.0, 91.0, 10.5, 47.0, 84.0, 32.0, 0.0]}, "KAVU400KD395SFW": {"outsource": 126629.0, "hours": [97.0, 48.0, 32.0, 216.0, 19.5, 0.0, 5.0, 0.0, 0.0, 9.0, 0.0, 12.5, 45.0, 0.0, 6.5, 0.0, 13.0, 0.0, 53.0, 37.0, 10.5, 51.0, 11.0, 16.0, 0.0]}, "KAV500KDV395SFW": {"outsource": 118089.0, "hours": [155.5, 711.0, 48.0, 278.0, 8.0, 0.0, 0.0, 0.0, 0.0, 7.0, 0.0, 3.5, 49.0, 0.0, 0.0, 0.0, 17.0, 0.0, 68.0, 44.0, 10.0, 47.5, 16.0, 16.0, 0.0]}, "B560KD400SFW": {"outsource": 88114.0, "hours": [10.0, 125.5, 32.0, 333.5, 24.5, 0.0, 5.0, 0.0, 0.0, 6.5, 0.0, 2.0, 29.0, 0.0, 0.0, 16.0, 21.5, 0.0, 0.0, 93.5, 9.0, 24.0, 16.0, 22.0, 0.0]}, "A390KD400SFW": {"outsource": 54324.0, "hours": [2.0, 81.0, 24.0, 249.5, 16.5, 0.0, 0.0, 0.0, 0.0, 3.5, 0.0, 2.0, 0.0, 0.0, 0.0, 6.0, 0.0, 0.0, 0.0, 48.0, 9.0, 12.0, 16.0, 16.0, 0.0]}, "KAV450KDV400SFW": {"outsource": 108226.0, "hours": [8.0, 112.0, 28.0, 348.5, 22.5, 0.0, 0.0, 0.0, 0.0, 6.0, 0.0, 2.0, 30.0, 0.0, 0.0, 0.0, 15.0, 0.0, 55.5, 36.5, 8.0, 19.5, 35.5, 5.0, 0.0]}, "CK900KD780HFW": {"outsource": 697628.0, "hours": [2.0, 143.0, 42.0, 895.5, 66.5, 0.0, 34.0, 39.0, 0.0, 112.5, 24.0, 7.0, 138.0, 0.0, 0.0, 0.0, 43.0, 0.0, 0.0, 99.0, 0.0, 63.0, 68.0, 40.0, 0.0]}, "KCV900KDV800SFW": {"outsource": 554862.0, "hours": [477.0, 226.0, 120.0, 895.5, 52.5, 0.0, 12.0, 161.5, 46.0, 19.5, 28.0, 32.0, 139.0, 0.0, 0.0, 0.0, 148.5, 0.0, 59.5, 99.5, 0.0, 85.5, 66.0, 33.0, 0.0]}, "CK850KD780HFW": {"outsource": 661658.0, "hours": [1.5, 87.0, 26.0, 874.0, 19.0, 0.0, 32.0, 25.0, 0.0, 25.0, 12.0, 0.0, 113.5, 0.0, 0.0, 0.0, 37.0, 0.0, 0.0, 118.5, 10.0, 53.2, 53.0, 40.0, 0.0]}, "KBV870KDV780HFW": {"outsource": 520225.0, "hours": [1.0, 105.0, 26.0, 732.0, 70.0, 0.0, 30.0, 143.5, 0.0, 64.0, 31.0, 15.5, 137.5, 0.0, 0.0, 0.0, 37.0, 0.0, 75.5, 80.0, 9.0, 54.1, 87.5, 40.0, 0.0]}, "TA1100": {"outsource": 850879.0, "hours": [60.0, 248.0, 40.0, 1379.0, 21.0, 0.0, 13.0, 75.0, 123.0, 0.0, 5.0, 3.5, 0.0, 0.0, 0.0, 0.0, 116.0, 0.0, 0.0, 74.0, 8.0, 15.0, 108.0, 0.0, 26.0]}, "TA710A": {"outsource": 26270.0, "hours": [40.0, 120.0, 40.0, 396.0, 9.0, 0.0, 10.0, 79.0, 0.0, 26.0, 26.0, 0.0, 41.0, 0.0, 0.0, 0.0, 63.0, 0.0, 0.0, 68.0, 23.0, 17.0, 160.0, 0.0, 24.0]}, "TA630B": {"outsource": 0, "hours": [40.0, 100.0, 40.0, 301.0, 8.0, 65.0, 5.0, 67.0, 0.0, 4.0, 15.0, 3.0, 47.0, 0.0, 0.0, 0.0, 30.0, 0.0, 0.0, 46.0, 10.0, 23.0, 0.0, 0.0, 20.0]}, "TA600B": {"outsource": 67636.0, "hours": [60.0, 50.0, 30.0, 203.0, 9.0, 0.0, 9.0, 102.0, 39.0, 0.0, 11.0, 2.0, 0.0, 0.0, 0.0, 20.0, 33.0, 0.0, 0.0, 54.0, 27.0, 15.5, 0.0, 0.0, 25.0]}, "TA670": {"outsource": 0.0, "hours": [62.0, 79.0, 40.0, 319.0, 15.0, 0.0, 7.0, 100.0, 40.0, 0.0, 20.0, 6.0, 0.0, 0.0, 0.0, 7.0, 26.0, 0.0, 0.0, 75.5, 13.0, 30.5, 36.0, 0.0, 24.0]}, "SSPMainReducerGearbox": {"outsource": 0, "hours": [400.0, 800.0, 80.0, 546.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 600.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, "SSPBEVELMainReducerGearbox": {"outsource": 0, "hours": [400.0, 800.0, 80.0, 546.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, "ROLLDRIVEREDUCERE2": {"outsource": 0, "hours": [300.0, 700.0, 40.0, 868.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0]}};
+
+function applyWorkHours() {
+  // 1. Make sure labor table is initialized
+  var tbody = document.getElementById('labor-tbody');
+  if (!tbody || tbody.children.length === 0) {
+    if (typeof initLaborTable === 'function') initLaborTable();
+  }
+
+  // 2. Get selected equipment
+  var sel = document.querySelector('input[name="wh-equip"]:checked');
+  if (!sel) {
+    var st = document.getElementById('wh-status');
+    if(st){ st.style.display='block'; st.style.background='#fef3c7'; st.style.color='#92400e'; st.textContent='⚠️ 請先選擇一個設備型號'; }
+    return;
+  }
+  var equipKey = sel.value;
+  var data = WORK_HOUR_DB[equipKey];
+  if (!data) {
+    var st = document.getElementById('wh-status');
+    if(st){ st.style.display='block'; st.style.background='#fee2e2'; st.style.color='#991b1b'; st.textContent='❌ 找不到該設備的工時數據: ' + equipKey; }
+    return;
+  }
+
+  // 3. Get all labor inputs
+  var inputs = document.querySelectorAll('#labor-tbody input[type="number"]');
+  if (inputs.length === 0) {
+    // Force init
+    if (typeof initLaborTable === 'function') initLaborTable();
+    inputs = document.querySelectorAll('#labor-tbody input[type="number"]');
+  }
+
+  // 4. Fill the hours
+  var hours = data.hours;
+  var totalHr = 0;
+  for (var i = 0; i < inputs.length && i < hours.length; i++) {
+    inputs[i].value = hours[i];
+    totalHr += hours[i];
+  }
+
+  // 5. Handle design override
+  var designSel = document.querySelector('input[name="wh-design"]:checked');
+  if (designSel) {
+    var dKey = designSel.value;
+    var dData = WORK_HOUR_DB[dKey];
+    if (dData && dData.hours[0] > 0) {
+      inputs[0].value = dData.hours[0]; // Override gear_design
+      totalHr = totalHr - hours[0] + dData.hours[0];
+    }
+  }
+
+  // 6. Handle standard override
+  var stdSel = document.querySelector('input[name="wh-standard"]:checked');
+  if (stdSel) {
+    var sKey = stdSel.value;
+    var sData = WORK_HOUR_DB[sKey];
+    if (sData && sData.hours[2] > 0) {
+      inputs[2].value = sData.hours[2]; // Override standard
+      totalHr = totalHr - hours[2] + sData.hours[2];
+    }
+  }
+
+  // 7. Set outsource in the outsource field (if exists)
+  var outsourceInput = document.getElementById('outsource-cost');
+  if (outsourceInput) {
+    outsourceInput.value = data.outsource;
+  }
+
+  // 8. Trigger recalculation
+  if (typeof calcLaborAll === 'function') calcLaborAll();
+  if (typeof recalcAll === 'function') recalcAll();
+
+  // 9. Update status & badge
+  var st = document.getElementById('wh-status');
+  if(st){ st.style.display='block'; st.style.background='#d1fae5'; st.style.color='#065f46'; st.textContent='✅ ' + equipKey + ' 工時已帶入，總工時: ' + totalHr + ' HR，外包: $' + data.outsource.toLocaleString(); }
+  var badge = document.getElementById('badge-workhour');
+  if(badge) badge.textContent = equipKey + ' ' + totalHr + ' HR';
+}
+
+function clearWorkHours() {
+  var inputs = document.querySelectorAll('#labor-tbody input[type="number"]');
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].value = 0;
+  }
+  var outsourceInput = document.getElementById('outsource-cost');
+  if (outsourceInput) outsourceInput.value = 0;
+
+  // Clear radio selections
+  var radios = document.querySelectorAll('input[name="wh-equip"], input[name="wh-design"], input[name="wh-standard"]');
+  for (var i = 0; i < radios.length; i++) radios[i].checked = false;
+
+  if (typeof calcLaborAll === 'function') calcLaborAll();
+  if (typeof recalcAll === 'function') recalcAll();
+
+  var st = document.getElementById('wh-status');
+  if(st){ st.style.display='block'; st.style.background='#f3f4f6'; st.style.color='#374151'; st.textContent='已清除所有工時數據'; }
+  var badge = document.getElementById('badge-workhour');
+  if(badge) badge.textContent = '選擇設備';
+}
+// ===== END WORK HOUR CALCULATOR =====
 </script>
 <!-- Import Modal -->
 <div id="importModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:10000;align-items:center;justify-content:center;">
